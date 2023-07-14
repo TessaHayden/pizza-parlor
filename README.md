@@ -28,7 +28,9 @@ https://github.com/TessaHayden/pizza-parlor
 
 #### Known Bugs:
 
-(KNOWN BUGS)
+- If the submit button is clicked repeatedly a corresponding total will be appended to the end of the currently displayed total.
+* Fixed problem by removing the createElement method and wrote another HTML tag for the current.
+
 
 #### TDD:
 Describe customPizza();

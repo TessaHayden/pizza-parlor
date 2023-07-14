@@ -2,8 +2,7 @@
 ##### By Tessa Hayden
 ---
 
-
-(ADD DESCRIPTION)
+An application to order pizza using object constructors and prototypes.
 
 #### Technologies used:
 
@@ -15,7 +14,7 @@
 
 ### Description:
 
- (ADD DESCRIPTION)
+ A customer has 3 size options and toppings to choose from.  Based on what the customer asks for a custom order will be put in and the total with the an order summary will be displayed.
 
 ### Setup:
 
@@ -25,13 +24,26 @@
 
 #### Link to repository:
 
-(LINK REPOSITORY)
+https://github.com/TessaHayden/pizza-parlor
 
 #### Known Bugs:
 
 (KNOWN BUGS)
 
 #### TDD:
+Describe customPizza();
+
+Test: "It should determine what size pizza the customer wants."
+Code: 
+if (pizzaSize === "20") {
+    return this.total = "$25";
+} else if (pizzaSize === "16") {
+    return this.total = "$21";
+} else if (pizzaSize === "12") {
+    return this.total = "$17";
+} else {
+    window.alert("no input was received");
+}
 
 
 <sub>MIT

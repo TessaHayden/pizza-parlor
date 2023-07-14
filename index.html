@@ -17,20 +17,57 @@
                 <div class="col">
                     <form id="customer-form">
                         <label for="name">Name:</label>
-                        <input id="name" type="text">
+                        <input id="name" type="text"><br/>
                         <label>Phone number:</label>
                         <input id="phone" type="text">
                         <button type="submit">Submit</button>
                     </form>
-                    <form id="pizza-form">
-                        <input type="radio" id="12inch" name="pizza-size" value="12-inch">
-                        <label for="12inch">12 inch pizza</label>
-                        <input type="radio" id="16inch" name="pizza-size" value="16-inch">
-                        <label for="16inch">16 inch pizza</label>
-                        <input type="radio" id="20inch" name="pizza-size" value="20-inch">
-                        <label for="20inch">20 inch pizza</label>
-                        <button type="submit">Order</button>
-                    </form>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pizza-size" id="12inch" value="12" checked>
+                        <label class="form-check-label" for="12inch">
+                            12 inch Za
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pizza-size" id="16inch" value="16">
+                        <label class="form-check-label" for="16inch">
+                            16 inch Za
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pizza-size" id="20inch" value="20">
+                        <label class="form-check-label" for="20inch">
+                            20 inch Za
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="2" id="pepperoni">
+                        <label class="form-check-label" for="pepperoni">
+                            Pepperoni
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="2" id="sausage">
+                        <label class="form-check-label" for="sausage">
+                            Sausage
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="1" id="mushroom">
+                        <label class="form-check-label" for="mushroom">
+                            Mushroom
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="1" id="olive">
+                        <label class="form-check-label" for="olive">
+                            Olive
+                        </label>
+                    </div>
+                </div>
+                <div class="row" id="display">
                 </div>
             </div>
         </div>

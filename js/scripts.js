@@ -13,13 +13,14 @@ function Pizza(size, toppings) {
     this.toppings = toppings;
 }
 
-PizzaOrder.prototype.pizzaSize = function () {
+Pizza.prototype.pizzaSize = function () {
+    let total = PizzaOrder.total;
     if (pizzaSize === "20") {
-      return (this.total = "$25");
+      return (total = "$25");
     } else if (pizzaSize === "16") {
-      return (this.total = "$21");
+      return (total = "$21");
     } else if (pizzaSize === "12") {
-      return (this.total = "$17");
+      return (total = "$17");
     } else {
       window.alert("no input was received");
     }
@@ -34,8 +35,13 @@ window.addEventListener("load", function (event) {
     let form = document.getElementById("customer-form");
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        let name = document.querySelector("input#name");
+        let name = document.querySelector("input#name").value;
         let pDisp = document.querySelector("p#displayName");
+        let divDisp = document.querySelector("div#display");
         pDisp.innerText = name;
+        let p = document.createElement("p");
+        let total = pizzaOrder.total;
+        p.append(total);
+        divDisp.append(p);
     })
 })

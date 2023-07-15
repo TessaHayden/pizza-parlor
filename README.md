@@ -42,10 +42,21 @@ if (pizzaSize === "20") {
 } else if (pizzaSize === "16") {
     return this.total = "$21";
 } else if (pizzaSize === "12") {
-    return this.total = "$17";
+    return this.total = "$18";
 } else {
     window.alert("no input was received");
 }
+Expected Output: total: "18"/"21"/"25"
+
+Describe Pizza.prototype.pizzaToppings()
+
+Test: "It should determine what toppings are selected and add the topping charge to the total."
+Code:
+let total = pizzaOrder.total;
+let toppingsVals = [];
+Expected Output: toppingsVals = [...]
+
+
 
 
 <sub>MIT

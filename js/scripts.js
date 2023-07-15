@@ -21,26 +21,51 @@ Pizza.prototype.pizzaSize = function () {
     } else if (pizzaSize === "16") {
       return (total = "$21");
     } else if (pizzaSize === "12") {
-      return (total = "$17");
+      return (total = "$18");
     } else {
       window.alert("no input was received");
     }
 }
 
-
+Pizza.prototype.pizzaToppings = function () {
+    let toppingsVals = [];
+    let inputToppings = document.querySelectorAll(
+      'input[type="checkbox"]:checked'
+    );
+    for (let i = 0; inputToppings[i]; i++) {
+        toppingsVals.push(inputToppings[i].value);
+    }
+    return toppingsVals;
+}
 
 let pizzaOrder = new PizzaOrder();
+let pizza = new Pizza();
+
+function customerInfo() {
+    let total = pizzaOrder.total;
+    let name = document.querySelector("input#name").value;
+    let tDisp = document.querySelector("p#display-total");
+    let nDisp = document.querySelector("p#display-name");
+    tDisp.innerText = total;
+    nDisp.innerText = name;
+}
+function placeOrder() {
+    let orderSummary = document.querySelector("p#pizza-summary");
+    let toppings = pizza.pizzaToppings();
+    orderSummary.innerText = toppings;
+    
+}
 
 window.addEventListener("load", function () {
     let form = document.getElementById("customer-form");
-
+    let pizzaOrder = document.getElementById("pizza-form");
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        let total = pizzaOrder.total;
-        let name = document.querySelector("input#name").value;
-        let tDisp = document.querySelector("p#display-total");
-        let nDisp = document.querySelector("p#display-name");
-        tDisp.innerText = total;
-        nDisp.innerText = name;
+        customerInfo();
+    });
+    pizzaOrder.addEventListener("submit", function (event) {
+        event.preventDefault();
+        placeOrder();
     });
 })
+

@@ -14,61 +14,67 @@
             <h1>Pizza Parlor</h1>
             <h2>By Tessa Hayden</h2>
             <div class="row">
-                <div class="col">
+                <div class="col-6">
                     <form id="customer-form">
                         <label for="name">Name:</label>
                         <input id="name" type="text"><br/>
                         <label>Phone number:</label>
                         <input id="phone" type="text">
-                        <button type="submit">Submit</button>
+                        <button type="submit" class="btn btn-primary" id="customer-info">Submit</button>
                     </form>
                 </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="pizza-size" id="12inch" value="12" checked>
-                        <label class="form-check-label" for="12inch">
-                            12 inch Za
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="pizza-size" id="16inch" value="16">
-                        <label class="form-check-label" for="16inch">
-                            16 inch Za
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="pizza-size" id="20inch" value="20">
-                        <label class="form-check-label" for="20inch">
-                            20 inch Za
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="2" id="pepperoni">
-                        <label class="form-check-label" for="pepperoni">
-                            Pepperoni
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="2" id="sausage">
-                        <label class="form-check-label" for="sausage">
-                            Sausage
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="1" id="mushroom">
-                        <label class="form-check-label" for="mushroom">
-                            Mushroom
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="1" id="olive">
-                        <label class="form-check-label" for="olive">
-                            Olive
-                        </label>
-                    </div>
+                <form id="pizza-form">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pizza-size" id="12inch" value="12" checked>
+                            <label class="form-check-label" for="12inch">
+                                12 inch Za => $18.00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pizza-size" id="16inch" value="16">
+                            <label class="form-check-label" for="16inch">
+                                16 inch Za => $21.00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pizza-size" id="20inch" value="20">
+                            <label class="form-check-label" for="20inch">
+                                20 inch Za => $25.00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input topping" type="checkbox" value="pepperoni" id="pepperoni" name="pepperoni">
+                            <label class="form-check-label" for="pepperoni">
+                                Pepperoni => $3.00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input topping" type="checkbox" value="sausage" id="sausage" name="sausage">
+                            <label class="form-check-label" for="sausage">
+                                Sausage => $3.00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input topping" type="checkbox" value="mushroom" id="mushroom" name="mushroom">
+                            <label class="form-check-label" for="mushroom">
+                                Mushroom => $1.00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input topping" type="checkbox" value="olive" id="olive" name="olive">
+                            <label class="form-check-label" for="olive">
+                                Olive => $1.00
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-success" id="place-order">Place Order!</button>
+                    </form>
                 </div>
-                <div class="row" id="display">
-                </div>
+            </div>
+            <div class="row" id="display">
+                    <p id="display-name"></p><br/>
+                    <p id="display-total"></p></br>
+                    <p id="pizza-summary"></p>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

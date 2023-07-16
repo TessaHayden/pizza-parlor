@@ -8,64 +8,73 @@ function Customer(name, phoneNumber) {
     this.name = name;
     this.phoneNumber = phoneNumber;
 }
+
 function Pizza(size) {
     this.size = size;
     this.toppings = {};
 }
 
-Pizza.prototype.pizzaSize = function () {
-    let total = PizzaOrder.total;
-    if (pizzaSize === "20") {
-        console.log(size);
-      return (total = "$25");
-    } else if (pizzaSize === "16") {
-      return (total = "$21");
-    } else if (pizzaSize === "12") {
-      return (total = "$18");
-    } else {
-      window.alert("no input was received");
-    }
+let pizzaOrder = new PizzaOrder();
+let pizza = new Pizza();
+
+function chooseSize() {
+    let radioSize = parseInt(document.querySelector("input[type='radio']:checked").value);
+    return (pizzaOrder.total = radioSize);
 }
 
-Pizza.prototype.pizzaToppings = function () {
+function addToppings() {
     let toppingsVals = [];
     let inputToppings = document.querySelectorAll(
       'input[type="checkbox"]:checked'
     );
     for (let i = 0; inputToppings[i]; i++) {
-        toppingsVals.push(inputToppings[i].value);
+      toppingsVals.push(inputToppings[i].value);
     }
     return toppingsVals;
 }
 
-let pizzaOrder = new PizzaOrder();
-let pizza = new Pizza();
+function orderTotal(toppingsVals) {
+    let size = parseInt(chooseSize());
+    let toppings = addToppings();
+    if (toppings.includes("pepperoni")) {
+        console.log("Order Total")
+    }
+    if (toppings.includes("sausage")) {
+      console.log("Order Total");
+    }
+    if (toppings.includes("mushroom")) {
+      console.log("Order Total");
+    }
+    if (toppings.includes("olive")) {
+      console.log("Order Total");
+    }
+}
 
 function customerInfo() {
-    let total = pizzaOrder.total;
     let name = document.querySelector("input#name").value;
-    let tDisp = document.querySelector("p#display-total");
     let nDisp = document.querySelector("p#display-name");
-    tDisp.innerText = total;
     nDisp.innerText = name;
 }
 function placeOrder() {
     let orderSummary = document.querySelector("p#pizza-summary");
-    let toppings = pizza.pizzaToppings();
-    orderSummary.innerText = toppings;
-    
+    let totalSummary = document.querySelector("p#display-total");
+    orderSummary.innerText = "hi";
+    totalSummary.innerText = "total";
 }
 
 window.addEventListener("load", function () {
     let form = document.getElementById("customer-form");
     let pizzaOrder = document.getElementById("pizza-form");
+
     form.addEventListener("submit", function (event) {
         event.preventDefault();
         customerInfo();
     });
     pizzaOrder.addEventListener("submit", function (event) {
         event.preventDefault();
+        orderTotal();
         placeOrder();
+
     });
 })
 

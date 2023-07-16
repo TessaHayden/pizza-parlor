@@ -31,6 +31,7 @@ https://github.com/TessaHayden/pizza-parlor
 - If the submit button is clicked repeatedly a corresponding total will be appended to the end of the currently displayed total.
 * Fixed problem by removing the createElement method and wrote another HTML tag for the current.
 
+- If you remove a topping the price remains the same.
 
 #### TDD:
 Describe customPizza();
@@ -50,11 +51,34 @@ Expected Output: total: "18"/"21"/"25"
 
 Describe Pizza.prototype.pizzaToppings()
 
-Test: "It should determine what toppings are selected and add the topping charge to the total."
+Test: "It should determine what toppings are selected."
 Code:
 let total = pizzaOrder.total;
 let toppingsVals = [];
 Expected Output: toppingsVals = [...]
+
+Test: "For 2 meat toppings 6 should be added to the total."
+Code:
+let total = pizzaOrder.total;
+let currentTotal;
+Expected Output: total = 6;
+
+Describe Pizza.pizzaSize()
+Test:"It should add the size cost to the total."
+Code:
+Pizza.size = querySelector("input[name='size']:checked");
+PizzaOrder.total = pizzaSizePrice;
+Expected Output: 18 for a 12inch pizza.
+
+Describe orderTotal()
+
+Test: "It should add up the cost of the pizza order."
+Code:
+if (toppings.includes("pepperoni")) {
+    console.log("Order Total.");
+}
+Expected Output: "Order Total"
+
 
 
 

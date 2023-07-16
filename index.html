@@ -44,25 +44,25 @@
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input topping" type="checkbox" value="pepperoni" id="pepperoni" name="pepperoni">
+                            <input class="form-check-input topping" type="checkbox" value="3" id="pepperoni" name="pepperoni">
                             <label class="form-check-label" for="pepperoni">
                                 Pepperoni => $3.00
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input topping" type="checkbox" value="sausage" id="sausage" name="sausage">
+                            <input class="form-check-input topping" type="checkbox" value="3" id="sausage" name="sausage">
                             <label class="form-check-label" for="sausage">
                                 Sausage => $3.00
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input topping" type="checkbox" value="mushroom" id="mushroom" name="mushroom">
+                            <input class="form-check-input topping" type="checkbox" value="1" id="mushroom" name="mushroom">
                             <label class="form-check-label" for="mushroom">
                                 Mushroom => $1.00
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input topping" type="checkbox" value="olive" id="olive" name="olive">
+                            <input class="form-check-input topping" type="checkbox" value="1" id="olive" name="olive">
                             <label class="form-check-label" for="olive">
                                 Olive => $1.00
                             </label>
@@ -72,14 +72,20 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col-4"><p>Customer:</p></div>
-                <div class="col-4"><p>Total:</p></div>
-                <div class="col-4"><p>Toppings:</p></div>
+                <div class="col-2"><p>Customer:</p></div>
+                <div class="col-3"><p>Phone:</p></div>
             </div>
             <div class="row mt-3" id="display">
-                <div class="col-4"><p id="display-name"></p></div>
-                <div class="col-4"><p id="display-total"></p></div>
-                <div class="col-4"><p id="pizza-summary"></p></div>
+                <div class="col-2"><p id="display-name"></p></div>
+                <div class="col-3"><p id="display-phone"></p></div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-2"><p>Total:</p></div>
+                <div class="col-10"><p>Toppings:</p></div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-2"><p id="display-total"></p></div>
+                <div class="col-6"><p id="pizza-summary"></p></div>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

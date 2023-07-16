@@ -34,13 +34,18 @@ function addToppings() {
 }
 
 function orderTotal(toppingsVals) {
-    let size = parseInt(chooseSize());
+    let sizeCost = parseInt(chooseSize());
     let toppings = addToppings();
     if (toppings.includes("pepperoni")) {
-        console.log("Order Total")
+        console.log("size cost: " + sizeCost);
+        console.log("toppings: " + toppings);
+        let newTotal = sizeCost + 3;
+        console.log("new total: " + newTotal);
+        return (pizzaOrder.total = newTotal);
     }
     if (toppings.includes("sausage")) {
-      console.log("Order Total");
+        let pizza
+        return (pizzaOrder.total = newTotal);
     }
     if (toppings.includes("mushroom")) {
       console.log("Order Total");

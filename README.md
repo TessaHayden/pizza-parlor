@@ -68,19 +68,30 @@ Test:"It should add the size cost to the total."
 Code:
 Pizza.size = querySelector("input[name='size']:checked");
 PizzaOrder.total = pizzaSizePrice;
-Expected Output: 18 for a 12inch pizza.
-
+Expected Output: 18
 Describe orderTotal()
 
-Test: "It should add up the cost of the pizza order."
+Test: "It should check to see what toppings are in the "toppings" array."
 Code:
 if (toppings.includes("pepperoni")) {
-    console.log("Order Total.");
+    console.log("Order Total");
 }
 Expected Output: "Order Total"
 
+Test: "It should add the cost of a topping to the total."
+Code:
+if(toppings.includes("pepperoni")) {
+    let newTotal = sizeCost + 3;
+    return newTotal;
+}
 
-
+Test: "It should update the total property of pizzaOrder for a 20 inch pizza with pepperoni as a topping."
+Code:
+if(toppings.includes("pepperoni")) {
+    let newTotal = sizeCost + 3;
+    return (pizzaOrder.total = newTotal);
+}
+Expected Output: pizzaOrder.total = 28;
 
 
 <sub>MIT

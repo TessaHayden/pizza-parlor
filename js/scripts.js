@@ -14,15 +14,12 @@ function Pizza(size) {
     this.toppings = {};
 }
 
-let pizzaOrder = new PizzaOrder();
-let pizza = new Pizza();
-
-function chooseSize() {
+Pizza.prototype.chooseSize = function() {
     let radioSize = parseInt(document.querySelector("input[type='radio']:checked").value);
     return (pizzaOrder.total = radioSize);
 }
 
-function addToppings() {
+Pizza.prototype.addToppings = function () {
     let toppingsVals = [];
     let inputToppings = document.querySelectorAll('input[type="checkbox"]:checked');
     for (let i = 0; inputToppings[i]; i++) {
@@ -37,12 +34,8 @@ function addToppings() {
     return toppingPrices;
 }
 
-function orderTotal() {
-    let sizeCost = parseInt(chooseSize());
-    let toppings = parseInt(addToppings());
-    let total = sizeCost + toppings;
-    pizzaOrder.total = total;
-}
+let pizzaOrder = new PizzaOrder();
+let pizza = new Pizza();
 
 function customerInfo() {
     let tele = document.querySelector("input#phone").value;
@@ -54,6 +47,10 @@ function customerInfo() {
 }
 
 function placeOrder() {
+    let sizeCost = parseInt(pizza.chooseSize());
+    let toppings = parseInt(pizza.addToppings());
+    let total = sizeCost + toppings;
+    pizzaOrder.total = total;
     let orderSummary = document.querySelector("p#pizza-summary");
     let totalSummary = document.querySelector("p#display-total");
     let toppingsVals = [];
@@ -74,7 +71,6 @@ window.addEventListener("load", function () {
     });
     pizzaOrder.addEventListener("submit", function (event) {
         event.preventDefault();
-        orderTotal();
         placeOrder();
 
     });
